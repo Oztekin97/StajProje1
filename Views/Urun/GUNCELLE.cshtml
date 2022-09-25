@@ -1,0 +1,29 @@
+﻿@model StajProje1.Models.Entity.URUN
+@{
+    ViewBag.Title = "GUNCELLE";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@using (Html.BeginForm("GUNCELLE", "Urun", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.URUNID)
+    @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control" })
+    @Html.LabelFor(m => m.URUNAD)
+    @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.URUNAD, "", new { @style = "color:red" })
+    @Html.LabelFor(m => m.MARKA)
+    @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.MARKA, "", new { @style = "color:red" })
+    @Html.LabelFor(m => m.URUNKATEGORI)
+    @Html.TextBoxFor(m => m.URUNKATEGORI, new { @class = "form-control" })
+    @*@Html.DropDownListFor(m=>m.KATEGORI.KATEGORIID,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })*@
+    @Html.LabelFor(m => m.FIYAT)
+    @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+    @Html.LabelFor(m => m.STOK)
+    @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+</div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
